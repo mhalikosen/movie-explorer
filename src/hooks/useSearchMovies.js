@@ -6,9 +6,9 @@ const useSearchMovies = (search) => {
   const [movies, setMovies] = useState([])
 
   useEffect(() => {
-    if (search) {
-      searchMovies(search).then(setMovies).catch(console.error)
-    }
+    searchMovies(search ? search : 'batman')
+      .then(setMovies)
+      .catch(console.error)
   }, [search])
 
   return movies
