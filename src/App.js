@@ -1,7 +1,5 @@
 import { Helmet } from 'react-helmet'
 
-import MovieDetailModal from './components/MovieDetailModal'
-
 import useDebounce from './hooks/useDebounce'
 
 import useSearchMovies from './hooks/useSearchMovies'
