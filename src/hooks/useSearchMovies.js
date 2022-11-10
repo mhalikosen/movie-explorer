@@ -8,7 +8,10 @@ const useSearchMovies = (search) => {
   useEffect(() => {
     searchMovies(search ? search : 'batman')
       .then(setMovies)
-      .catch(console.error)
+      .catch((error) => {
+        setMovies([])
+        console.error(error)
+      })
   }, [search])
 
   return movies

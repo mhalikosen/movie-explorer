@@ -10,7 +10,7 @@ const Home = () => {
   const movies = useSearchMovies(search)
 
   return (
-    <div className="container mx-auto max-w-2xl">
+    <div className="mx-auto max-w-2xl">
       <div className="m-5 rounded bg-blue-100 bg-blend-darken shadow">
         <input
           placeholder="Filmlerde arayın...  (Batman)"
@@ -20,9 +20,9 @@ const Home = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-      <div className="grid grid-cols-4 justify-items-center gap-2">
-        {movies &&
-          movies.map(({ Poster, Title, imdbID }, index) => (
+      {movies.length ? (
+        <div className="grid grid-cols-4 justify-items-center gap-2">
+          {movies.map(({ Poster, Title, imdbID }, index) => (
             <Link
               to={`/detay/${imdbID}`}
               className="flex h-60 w-40 cursor-pointer flex-col items-start justify-end bg-cover bg-center bg-no-repeat drop-shadow transition-all duration-300 hover:scale-105"
@@ -32,7 +32,10 @@ const Home = () => {
               <div className="w-full bg-gradient-to-t from-black p-2 font-bold text-white drop-shadow-2xl">{Title}</div>
             </Link>
           ))}
-      </div>
+        </div>
+      ) : (
+        <div className="mt-12 w-full text-center font-bold text-white">Aramanıza uygun bir film bulunamadı...</div>
+      )}
     </div>
   )
 }

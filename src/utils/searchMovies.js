@@ -7,6 +7,8 @@ const searchMovies = (search) => {
       if (res.data.Search) {
         const movies = Object.values(res.data.Search)
         resolve(movies)
+      } else {
+        reject('Aramanıza uygun bir film bulunamadı.')
       }
     } catch (error) {
       reject(error)
