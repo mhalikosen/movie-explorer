@@ -44,7 +44,7 @@ const MovieDetailModal = () => {
               <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt class="text-sm font-medium text-gray-500">IMDB Puanı</dt>
                 <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                  <Link className="flex items-center gap-1 text-blue-700" to={`//www.imdb.com/title/${imdbID}`} target="_blank">
+                  <a className="flex items-center gap-1 text-blue-700" href={`https://www.imdb.com/title/${imdbID}`} target="_blank">
                     {imdbRating}
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="inline-block h-4 w-4">
                       <path
@@ -53,7 +53,7 @@ const MovieDetailModal = () => {
                         d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
                       />
                     </svg>
-                  </Link>
+                  </a>
                 </dd>
               </div>
               <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -68,11 +68,11 @@ const MovieDetailModal = () => {
           </div>
         </div>
       </div>
-      <a className="fixed left-8 bottom-8 flex h-12 w-12 items-center justify-center rounded-full bg-blue-500/75 transition-all duration-300 hover:translate-x-1 hover:bg-blue-500" to="/">
+      <Link className="fixed left-8 bottom-8 flex h-12 w-12 items-center justify-center rounded-full bg-blue-500/75 transition-all duration-300 hover:translate-x-1 hover:bg-blue-500" to="/">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
         </svg>
-      </a>
+      </Link>
     </>
   )
 }
