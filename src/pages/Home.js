@@ -21,7 +21,7 @@ const Home = () => {
         />
       </div>
       {movies.length ? (
-        <div className="grid grid-cols-4 justify-items-center gap-2">
+        <div className="grid grid-cols-2 justify-items-center gap-2 sm:grid-cols-3 md:grid-cols-4">
           {movies.map(({ Poster, Title, imdbID, Year }, index) => (
             <Link
               to={`/detay/${imdbID}`}
@@ -34,6 +34,8 @@ const Home = () => {
             </Link>
           ))}
         </div>
+      ) : search.length < 3 ? (
+        <div className="mt-12 w-full text-center font-bold text-white">Arama yapmak için lütfen en az üç karakter girin.</div>
       ) : (
         <div className="mt-12 w-full text-center font-bold text-white">Aramanıza uygun bir film bulunamadı...</div>
       )}
