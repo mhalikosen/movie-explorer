@@ -10,7 +10,7 @@ const Home = () => {
   const movies = useSearchMovies(search)
 
   return (
-    <div className="mx-auto max-w-2xl">
+    <div className="mx-auto max-w-2xl pb-20">
       <div className="m-5 rounded bg-blue-100 bg-blend-darken shadow">
         <input
           placeholder="Filmlerde arayın...  (Batman)"
@@ -22,14 +22,15 @@ const Home = () => {
       </div>
       {movies.length ? (
         <div className="grid grid-cols-4 justify-items-center gap-2">
-          {movies.map(({ Poster, Title, imdbID }, index) => (
+          {movies.map(({ Poster, Title, imdbID, Year }, index) => (
             <Link
               to={`/detay/${imdbID}`}
-              className="flex h-60 w-40 cursor-pointer flex-col items-start justify-end bg-cover bg-center bg-no-repeat drop-shadow transition-all duration-300 hover:scale-105"
+              className="flex h-60 w-40 cursor-pointer flex-col items-center justify-between bg-cover bg-center bg-no-repeat drop-shadow transition-all duration-300 hover:scale-105"
               style={{ backgroundImage: `url('${Poster}')` }}
               key={index}
             >
-              <div className="w-full bg-gradient-to-t from-black p-2 font-bold text-white drop-shadow-2xl">{Title}</div>
+              <div className="w-full bg-gradient-to-b from-black p-2 pt-1 text-right text-sm font-bold text-white drop-shadow">{Year}</div>
+              <div className="w-full bg-gradient-to-t from-black p-2 pb-1 font-bold text-white drop-shadow-2xl">{Title}</div>
             </Link>
           ))}
         </div>
