@@ -25,7 +25,7 @@ const Home = () => {
           {movies.map(({ Poster, Title, imdbID, Year }, index) => (
             <Link
               to={`/detay/${imdbID}`}
-              className="flex h-60 w-40 cursor-pointer flex-col items-center justify-between bg-cover bg-center bg-no-repeat drop-shadow transition-all duration-300 hover:scale-105"
+              className="flex h-60 w-40 cursor-pointer flex-col items-center justify-between overflow-hidden rounded bg-cover bg-center bg-no-repeat drop-shadow transition-all duration-300 hover:scale-105"
               style={{ backgroundImage: `url('${Poster}')` }}
               key={index}
             >
